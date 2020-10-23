@@ -4,7 +4,7 @@
 // Creare una funzione per invertire i caratteri di una stringa.
 // Capire se la parola inserita è palindroma
 
-// var parola = prompt('Inserisci una parola!!!');
+// var parola = prompt('Inserisci una parola!!!').toLowerCase().trim();
 // console.log('PAROLA:', parola);
 //
 // var parolaReverse = invertiCaratteri(parola);
@@ -37,35 +37,80 @@
 // Dichiariamo chi ha vinto in base alla scelta pario o dispari fatta all'inizio dall'utente.
 
 
+// ...............Prima Prova...............
 
 
-var sceltaUtentePariDispari = prompt('scegli pari o dispari');
+// var sceltaUtentePariDispari = prompt('scegli pari o dispari');
+//
+// var sceltaUtenteNumero = parseInt(prompt('scegli un numero da 1 a 5'));
+//
+// console.log(sceltaUtentePariDispari);
+//
+// console.log(sceltaUtenteNumero);
+//
+// // Random Computer
+// var randomNumber = getRandom(1, 5);
+// console.log(randomNumber);
+//
+// // // Generazione NUMERO RANDOM
+// function getRandom(min, max) {
+//   var random = Math.floor(Math.random() * (max - min + 1) ) + min;
+// }
+//
+//
+//
+//
+// function pariDispari(numero) {
+//
+//   if(numero % 2 ==0){
+//     return 'pari';
+//   }
+//   else{
+//     return 'dispari';
+//
+//   }
+// }
 
-var sceltaUtenteNumero = parseInt(prompt('scegli un numero da 1 a 5'));
 
-console.log(sceltaUtentePariDispari);
 
-console.log(sceltaUtenteNumero);
+// PARI E dispari fatto con PAolo
+// ............................................
 
-// Random Computer
-var randomNumber = getRandom(1, 5);
-console.log(randomNumber);
 
-// // Generazione NUMERO RANDOM
-function getRandom(min, max) {
-  var random = Math.floor(Math.random() * (max - min + 1) ) + min;
+// GIOCATE
+var sceltaGiocatore = prompt('inserisci pari o dispari').toLowerCase().trim();
+console.log('Scelta Giocatore: ', sceltaGiocatore);
+
+var numeroGiocatore = parseInt(prompt('inserisci un umero da 1 a 5').trim() );
+console.log('Numero giocatore', numeroGiocatore);
+
+// OPPONENTE
+var numeroOpponente = getRandomNumber(1, 5);  // Computer
+
+// somma
+var somma = numeroGiocatore + numeroOpponente;
+console.log('Somma',somma);
+// CONTROLLO
+var risultato = checkPariDispari(somma);
+// Vincitore
+if (sceltaGiocatore === risultato) {
+  console.log('Vince il Giocatore');
+}
+else {
+  console.log('Vince Opponente');
 }
 
+// Genera Num RANDOM
+function getRandomNumber(min, max){
+  return Math.floor( Math.random() * (max - min +1 ) ) + min;
 
+}
 
+// ..Controllo Natura Pari o DIspari di un numero
 
-function pariDispari(numero) {
-
-  if(numero % 2 ==0){
+function checkPariDispari(num){
+  if (num % 2 ===0){
     return 'pari';
   }
-  else{
-    return 'dispari';
-
-  }
+  return 'dispari';
 }
